@@ -16,7 +16,7 @@ public class TurretVisualizer : MonoBehaviour
             {
                 GameObject click = hit.collider.gameObject;
                 float y_angle = Vector3.Angle(Vector3.forward, click.transform.position-transform.position)+adjusmentRotation;
-                transform.rotation = Quaternion.Euler(0, y_angle, 0);
+                transform.rotation = Quaternion.Euler(-90, y_angle, 0);
                 enabled = false;
             }
         }
