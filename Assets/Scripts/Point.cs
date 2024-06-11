@@ -2,10 +2,10 @@
 {
     public int x;
     public int y;
-    private const int _upBorderCenter = 4;
-    private const int _downBorderCenter = 5;
-    private const int _leftBorderCenter = 4;
-    private const int _rightBorderCenter = 5;
+    private static int _upBorderCenter = 4;
+    private static int _downBorderCenter = 5;
+    private static int _leftBorderCenter = 4;
+    private static int _rightBorderCenter = 5;
 
     public Point(int x, int y)
     {
@@ -13,6 +13,14 @@
         this.y = y;
     }
 
+
+    public static void SetCenterBorders(int up, int down)
+    {
+        _upBorderCenter = up;
+        _downBorderCenter = down;
+        _leftBorderCenter = up;
+        _rightBorderCenter = down;
+}
 
     public int GetDistSquared(Point _p)
     {
