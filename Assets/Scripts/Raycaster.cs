@@ -23,7 +23,11 @@ public class Raycaster : MonoBehaviour
         Field.DeleteCoin(p);
 
         GameObject spawnedObject = ObjectSpawner.SpawnObject(CurrentPlayer.TypePurchasedObject, CurrentPlayer.PurchasedObject, place, Quaternion.identity);
-
+        if (CurrentPlayer.TypePurchasedObject.Type == "turret") 
+        {
+            CurrentPlayer.LastPurchasedTurret = new Turret();
+            CurrentPlayer.LastPurchasedTurret.Coodinate = p;
+        }
         CurrentPlayer.OperatingMode = "expectation";
         CurrentPlayer.TypePurchasedObject = null;
         CurrentPlayer.PurchasedObject = null;
