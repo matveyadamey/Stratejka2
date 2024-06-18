@@ -1,32 +1,35 @@
 ﻿using System;
 
-class Turret : Object
+public class Turret : Object
 {
     public override string Type { get; } = "turret";
     public override int Cost { get; } = 5;
     public override int PlayerNumber { get; }
 
+    public Point Coodinate { get; set; }
+    
     private Point _direction;
 
-    public Turret(int playerNumber, Point direction)
+    public Turret()
     {
-        if (playerNumber < 0)
-        {
-            throw new ArgumentOutOfRangeException();
-        }
-        PlayerNumber = playerNumber;
+        
+        PlayerNumber = CurrentPlayer.CurrentPlayerNumber;
+    }
 
-        if (direction.GetDistSquared(new Point(0, 0)) > 1)
-        {
-            throw new ArgumentOutOfRangeException();
-        }
-        _direction = direction;
+    public void SetDirection(Point p)
+    {
+        _direction = p - Coodinate;
     }
 
     public override bool IsDealtDamage(Point coord)
     {
-        int dist1 = coord.GetDistSquared(new Point(0, 0));
+        /*int dist1 = coord.GetDistSquared(new Point(0, 0));
         int dist2 = coord.GetDistSquared(_direction);
-        return (dist1 == 2 && dist2 == 1) || dist2 == 0;
+        return (dist1 == 2 && dist2 == 1) || dist2 == 0;*/
+        if (coord.y != 0 && coord.y == _direction.y ||
+            coord.x != 0 && coord.x == _direction.x ||
+            coord.x == 0 && coord.y == 0)
+            return true;
+        return false;
     }
 }
