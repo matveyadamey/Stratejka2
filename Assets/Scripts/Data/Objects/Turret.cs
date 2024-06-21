@@ -6,7 +6,7 @@ public class Turret : Object
     public override int Cost { get; } = 5;
     public override int PlayerNumber { get; }
 
-    public Point Coodinate { get; set; }
+    public Point Coordinate { get; set; }
     
     private Point _direction;
 
@@ -18,7 +18,7 @@ public class Turret : Object
 
     public void SetDirection(Point p)
     {
-        _direction = p - Coodinate;
+        _direction = p - Coordinate;
     }
 
     public override bool IsDealtDamage(Point coord)
