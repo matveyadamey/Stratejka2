@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class Raycaster : MonoBehaviour
 {
-    Vector3 clickPosition;
-    void moveChip()
+    private Vector3 _clickPosition;
+    private static bool _enabled = false;
+    public static void ChangeEnabled()
     {
-        Point lastClick = new Point((int)clickPosition.x, (int)clickPosition.z);
+        _enabled = !_enabled;
+    }
+
+    private void moveChip()
+    {
+        Point lastClick = new Point((int)_clickPosition.x, (int)_clickPosition.z);
         CurrentPlayer.MovementChip.Move(lastClick);
     }
-    void buyObject()
+    private void buyObject()
     {
-        Vector3 place = new Vector3(clickPosition.x, 1, clickPosition.z);
+        Vector3 place = new Vector3(_clickPosition.x, 1, _clickPosition.z);
 
         Player player = PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber];
         Point p = new Point((int)place.x, (int)place.z);
@@ -26,14 +32,14 @@ public class Raycaster : MonoBehaviour
         if (CurrentPlayer.TypePurchasedObject.Type == "turret") 
         {
             CurrentPlayer.LastPurchasedTurret = new Turret();
-            CurrentPlayer.LastPurchasedTurret.Coodinate = p;
+            CurrentPlayer.LastPurchasedTurret.Coordinate = p;
         }
         CurrentPlayer.OperatingMode = "expectation";
         CurrentPlayer.TypePurchasedObject = null;
         CurrentPlayer.PurchasedObject = null;
         CurrentPlayer.NextPlayer();
     }
-    void OnClick()
+    private void OnClick()
     {
         switch (CurrentPlayer.OperatingMode)
         {
@@ -50,7 +56,7 @@ public class Raycaster : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !_enabled)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -61,16 +67,21 @@ public class Raycaster : MonoBehaviour
 
                 if ((CurrentPlayer.PurchasedObject != null & CurrentPlayer.TypePurchasedObject != null) || CurrentPlayer.MovementChip != null)
                 {
-                    if (click.transform.position != clickPosition)
+                    if (click.transform.position != _clickPosition)
                     {
                         if (click.tag == "Cell")
                         {
-                            clickPosition = click.transform.position;
+                            _clickPosition = click.transform.position;
                             OnClick();
                         }
                     }
                 }
             }
+        }
+        if (WinCondition.NumberWinningPlayer() != 0)
+        {
+            Win.ShowWinScreen();
+            enabled = true;
         }
     }
 
