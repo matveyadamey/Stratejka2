@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
 
     public void BuyTurretButton()
     {
-        Object turret = new Turret(CurrentPlayer.CurrentPlayerNumber, new Point(0, 1));
+        Object turret = new Turret();
         BuyButton(turret, _turretPrefab);
     } 
     

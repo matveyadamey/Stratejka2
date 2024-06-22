@@ -4354,6 +4354,8 @@ MonoBehaviour:
   _buildingPanel1: {fileID: 1991934998}
   _buildingPanel2: {fileID: 1355560637}
   _canMoveMaterial: {fileID: 2100000, guid: b64ba664ed4a9fb45a8bb110fb1498e2, type: 2}
+  _firstPlayerMaterial: {fileID: 2100000, guid: b07f6a19c742b6e43bfa070f21927234, type: 2}
+  _secondPlayerMaterial: {fileID: 2100000, guid: 7cb77e1126bdddc4585a457bfea7c863, type: 2}
   _materials:
   - {fileID: 2100000, guid: 04da52fcff48d2748a7e0422c07871a1, type: 2}
   - {fileID: 2100000, guid: 281d0e41beee1434ab0e2ab609b954df, type: 2}
@@ -4364,6 +4366,7 @@ MonoBehaviour:
   _cellParent: {fileID: 63917450}
   _coinPrefab: {fileID: 7042462938848942815, guid: 1c764e7581c6e9246a5260b69b940aa7, type: 3}
   _coinParent: {fileID: 885158055}
+  _winScreen: {fileID: 7042462938848942815, guid: 1c764e7581c6e9246a5260b69b940aa7, type: 3}
 --- !u!4 &887007503
 Transform:
   m_ObjectHideFlags: 0
@@ -9386,7 +9389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockPrefab: {fileID: 9222614923372103123, guid: d3c49e2a603618e46b96bad3e3c5a1c1, type: 3}
-  _turretPrefab: {fileID: 6461996372499672702, guid: 7f9169bc6064cf140bef53164bf0b84e, type: 3}
+  _turretPrefab: {fileID: 6461996372499672702, guid: 78deb0842f3369b47887b6c40dcce488, type: 3}
 --- !u!114 &2076689072
 MonoBehaviour:
   m_ObjectHideFlags: 0

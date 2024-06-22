@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class StartGame : MonoBehaviour
 {
     public const int Size = 10;
+    public const int CenterSize = 2;
     public const int RadiusAttack = 1;
     public const int PlayersCount = 2;
     public const int ChipsCount = 2;
@@ -25,13 +26,17 @@ public class StartGame : MonoBehaviour
     [SerializeField] private GameObject _buildingPanel1;
     [SerializeField] private GameObject _buildingPanel2;
     [SerializeField] private Material _canMoveMaterial;
+    [SerializeField] private Material _firstPlayerMaterial;
+    [SerializeField] private Material _secondPlayerMaterial;
     [SerializeField] private Material[] _materials;
     [SerializeField] private GameObject _cellPrefab;
     [SerializeField] private Transform _cellParent;
     [SerializeField] private GameObject _coinPrefab;
     [SerializeField] private Transform _coinParent;
+    [SerializeField] private GameObject _winScreen;
     void Awake()
     {
+        Point.SetCenterBorders((Size - CenterSize) / 2, (Size + CenterSize) / 2 - 1);
         CanMoveMaterial = _canMoveMaterial;
         Materials = _materials;
         CellPrefab = _cellPrefab;
@@ -46,6 +51,8 @@ public class StartGame : MonoBehaviour
         MapObject.MakeMapObject();
         MapCoins.MakeMapCoins();
         Field.FieldAndCoinsSpawn();
+        Highlighter.SetMaterials(_firstPlayerMaterial, _secondPlayerMaterial);
+        Win.SetWinScreen(_winScreen);
 
         PlayersContainer.MakePlayers();
         PlayersContainer.Players[0].SetCoordChip(0, new Point(0, 0));
