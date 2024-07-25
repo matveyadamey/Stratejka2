@@ -8,14 +8,13 @@ class Turret : Object
 
     private Point _direction;
 
-    public Turret(int playerNumber, Point direction)
+    public Turret()
     {
-        if (playerNumber < 0)
-        {
-            throw new ArgumentOutOfRangeException();
-        }
-        PlayerNumber = playerNumber;
+        PlayerNumber = CurrentPlayer.CurrentPlayerNumber;
+    }
 
+    public void SetDirection(Point direction)
+    {
         if (direction.GetDistSquared(new Point(0, 0)) > 1)
         {
             throw new ArgumentOutOfRangeException();
