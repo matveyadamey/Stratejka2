@@ -12,6 +12,7 @@ public static class CurrentPlayer
     // "buy_object"
     public static GameObject PurchasedObject { get; set; } = null;
     public static Object TypePurchasedObject { get; set; } = null;
+    public static Turret LastPurchasedTurret { get; set; } = null;
     //==========================================================================
 
 
