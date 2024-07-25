@@ -29,7 +29,6 @@ public class UIManager : MonoBehaviour
 
     public void BuyButton(Object type, GameObject prefab)
     {
-
         Player player = PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber];
 
         if (player.CountCoins >= type.Cost)
@@ -47,7 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void BuyTurretButton()
     {
-        Object turret = new Turret(CurrentPlayer.CurrentPlayerNumber, new Point(0, 1));
+        Object turret = new Turret();
         BuyButton(turret, _turretPrefab);
     } 
     
