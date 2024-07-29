@@ -3,6 +3,7 @@ using UnityEngine;
 public class Raycaster : MonoBehaviour
 {
     Vector3 clickPosition;
+    private static bool _isGameContinue = true;
     void moveChip()
     {
         Point lastClick = new Point((int)clickPosition.x, (int)clickPosition.z);
@@ -47,10 +48,15 @@ public class Raycaster : MonoBehaviour
         }
     }
 
+    public static void OffGame() 
+    {
+        _isGameContinue = false;
+    }
+
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && _isGameContinue)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

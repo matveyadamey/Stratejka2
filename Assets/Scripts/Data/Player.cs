@@ -51,7 +51,10 @@ public class Player
         return possiblePlacesMoveTo;
     }
 
-
+    public bool IsChipsInCenter()
+    {
+        return Point.IsPointInCenter(_coordChip[0]) && Point.IsPointInCenter(_coordChip[1]);
+    }
     public void MoveChip(int chipIndex, Point placeMoveTo)
     {
         MapObject.DeleteObject(_coordChip[chipIndex]);
@@ -60,6 +63,10 @@ public class Player
 
         CountCoins += MapCoins.GetCoinValue(placeMoveTo);
         MapCoins.DeleteCoin(placeMoveTo);
+        if (Win.NumberWinningPlayer() != 0) 
+        {
+            Win.ShowWinScreen();
+        }
     }
 
     public bool CanBuyObject(Object type, Point p)
