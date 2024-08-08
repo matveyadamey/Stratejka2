@@ -4,7 +4,7 @@ public class Movement : MonoBehaviour {
 
     [SerializeField] private float _speed=10f;
     [SerializeField] private int playerNumber;
-    [SerializeField] private int chipNumber;
+    [SerializeField] public int chipNumber;
     [SerializeField] private Raycaster raycaster;
 
     private IEnumerator realMove(Vector3 target)
