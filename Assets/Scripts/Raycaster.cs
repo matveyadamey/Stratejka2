@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Raycaster : MonoBehaviour
@@ -23,6 +24,11 @@ public class Raycaster : MonoBehaviour
         Field.DeleteCoin(p);
 
         GameObject spawnedObject = ObjectSpawner.SpawnObject(CurrentPlayer.TypePurchasedObject, CurrentPlayer.PurchasedObject, place, Quaternion.identity);
+
+        if (CurrentPlayer.MovementChip != null) {
+            Highlighter.HiglightPossiblePlacesToMove(CurrentPlayer.MovementChip.chipNumber, false);
+            Highlighter.HighlightOff(CurrentPlayer.MovementChip.gameObject);
+        }
 
         CurrentPlayer.NextPlayer();
 
