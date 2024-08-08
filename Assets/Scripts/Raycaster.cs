@@ -24,10 +24,8 @@ public class Raycaster : MonoBehaviour
 
         GameObject spawnedObject = ObjectSpawner.SpawnObject(CurrentPlayer.TypePurchasedObject, CurrentPlayer.PurchasedObject, place, Quaternion.identity);
 
-        if (CurrentPlayer.TypePurchasedObject.Type != "turret")
-        {
-            CurrentPlayer.NextPlayer();
-        }
+        CurrentPlayer.NextPlayer();
+
         CurrentPlayer.OperatingMode = "expectation";
         CurrentPlayer.TypePurchasedObject = null;
         CurrentPlayer.PurchasedObject = null;
