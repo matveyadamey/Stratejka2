@@ -14,7 +14,7 @@
     }
 
 
-    public int GetDistSquared(Point _p)
+    public int GetDistSquared(Point _p) 
     {
         Point dist = new(x - _p.x, y - _p.y);
         return dist.x * dist.x + dist.y * dist.y;

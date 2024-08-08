@@ -3817,7 +3817,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3869,13 +3869,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.46836928, y: 0, z: 0, w: 0.8835328}
-  m_LocalPosition: {x: 4.13, y: 6.21, z: 3.31}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.31941903, y: -0, z: -0, w: 0.94761366}
+  m_LocalPosition: {x: 4.11, y: 12.87, z: 4.4}
+  m_LocalScale: {x: 3.8685, y: 2.231, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 55.857, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.256, y: 0, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4364,6 +4364,7 @@ MonoBehaviour:
   _cellParent: {fileID: 63917450}
   _coinPrefab: {fileID: 7042462938848942815, guid: 1c764e7581c6e9246a5260b69b940aa7, type: 3}
   _coinParent: {fileID: 885158055}
+  _winMenu: {fileID: 0}
 --- !u!4 &887007503
 Transform:
   m_ObjectHideFlags: 0
@@ -9386,7 +9387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockPrefab: {fileID: 9222614923372103123, guid: d3c49e2a603618e46b96bad3e3c5a1c1, type: 3}
-  _turretPrefab: {fileID: 6461996372499672702, guid: 7f9169bc6064cf140bef53164bf0b84e, type: 3}
+  _turretPrefab: {fileID: 7257452388645536094, guid: 6562406689839484bb10d43cd7042ba2, type: 3}
 --- !u!114 &2076689072
 MonoBehaviour:
   m_ObjectHideFlags: 0

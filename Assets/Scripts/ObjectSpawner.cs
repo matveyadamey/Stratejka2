@@ -9,10 +9,8 @@ public class ObjectSpawner : MonoBehaviour
         GameObject spawnedObject= Instantiate(prefab, pos, rotation);
 
         Player player = PlayersContainer.Players[CurrentPlayer.CurrentPlayerNumber];
-        if (type.Type != "turret")
-        {
-            player.BuyObject(type, new Point((int)pos.x, (int)pos.z));
-        }
+        player.BuyObject(type, new Point((int)pos.x, (int)pos.z));
+
         return spawnedObject;
     }
 }
