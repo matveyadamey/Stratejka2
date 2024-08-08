@@ -14,3 +14,4 @@ public class ObjectSpawner : MonoBehaviour
         return spawnedObject;
     }
 }
+ 
