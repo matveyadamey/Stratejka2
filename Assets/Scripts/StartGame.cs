@@ -30,7 +30,6 @@ public class StartGame : MonoBehaviour
     [SerializeField] private Transform _cellParent;
     [SerializeField] private GameObject _coinPrefab;
     [SerializeField] private Transform _coinParent;
-    [SerializeField] private GameObject _winMenu;
     void Awake()
     {
         CanMoveMaterial = _canMoveMaterial;
@@ -47,7 +46,6 @@ public class StartGame : MonoBehaviour
         MapObject.MakeMapObject();
         MapCoins.MakeMapCoins();
         Field.FieldAndCoinsSpawn();
-        Win.SetWinScreen(_winMenu);
 
         PlayersContainer.MakePlayers();
         PlayersContainer.Players[0].SetCoordChip(0, new Point(0, 0));

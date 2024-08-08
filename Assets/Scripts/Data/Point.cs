@@ -1,4 +1,5 @@
-﻿public struct Point
+
+public struct Point
 {
     public int x;
     public int y;
@@ -32,5 +33,3 @@
     public static bool operator ==(Point a, Point b) => (a.x == b.x) && (a.y == b.y);
     public static bool operator !=(Point a, Point b) => !(a == b);
 }
-
-
